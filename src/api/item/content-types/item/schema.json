@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "items",
+  "info": {
+    "singularName": "item",
+    "pluralName": "items",
+    "displayName": "Item",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "Type": {
+      "type": "enumeration",
+      "enum": [
+        "Sword",
+        "Shield",
+        "Bow",
+        "Arrow",
+        "Crossbow",
+        "Staff",
+        "Tunic",
+        "Light Armor",
+        "Heavy Armor",
+        "Ring",
+        "Pendant",
+        "Cloak",
+        "Dagger",
+        "Mace",
+        "Spear",
+        "Miscellaneous"
+      ],
+      "required": true
+    },
+    "Range": {
+      "type": "enumeration",
+      "enum": [
+        "Normal",
+        "Rare",
+        "Extraordinary",
+        "Unique",
+        "Legendary"
+      ],
+      "required": true
+    },
+    "Skill1": {
+      "type": "text",
+      "required": false
+    },
+    "Skill2": {
+      "type": "text"
+    },
+    "Skill3": {
+      "type": "text"
+    },
+    "bonus": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0
+    },
+    "bonusType": {
+      "type": "enumeration",
+      "enum": [
+        "Strength",
+        "Perception",
+        "Endurance",
+        "Charisma",
+        "Intelligence",
+        "Agility",
+        "Luck"
+      ]
+    }
+  }
+}
