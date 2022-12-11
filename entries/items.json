@@ -1,0 +1,39 @@
+{
+	"version": 2,
+	"data": {
+		"api::item.item": {
+			"1": {
+				"id": 1,
+				"Name": "Espada de hierro",
+				"Type": "Sword",
+				"Range": "Normal",
+				"Skill1": null,
+				"Skill2": null,
+				"Skill3": null,
+				"createdAt": "2022-12-10T11:59:08.467Z",
+				"updatedAt": "2022-12-10T12:14:23.045Z",
+				"publishedAt": "2022-12-10T12:14:23.036Z",
+				"bonus": null,
+				"bonusType": null,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"Name": "Arco de madera",
+				"Type": "Bow",
+				"Range": "Normal",
+				"Skill1": null,
+				"Skill2": null,
+				"Skill3": null,
+				"createdAt": "2022-12-10T12:14:47.823Z",
+				"updatedAt": "2022-12-10T12:14:49.643Z",
+				"publishedAt": "2022-12-10T12:14:49.630Z",
+				"bonus": null,
+				"bonusType": null,
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}

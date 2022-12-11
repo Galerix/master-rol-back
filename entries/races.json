@@ -1,0 +1,47 @@
+{
+	"version": 2,
+	"data": {
+		"api::race.race": {
+			"1": {
+				"id": 1,
+				"Name": "Humano",
+				"Skill": "Aura - Las habilidades son el doble de potentes con el aura activada. Si falla en la activación del aura tiene una penalización.",
+				"createdAt": "2022-12-10T12:05:45.770Z",
+				"updatedAt": "2022-12-10T12:12:50.710Z",
+				"publishedAt": "2022-12-10T12:07:51.687Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"Name": "Elfo",
+				"Skill": "Percepción Élfica - Tienen una percepción mayor sobre el entorno que el resto de razas. Dependiendo del oficio del elfo la percepción variará entre física y mágica.",
+				"createdAt": "2022-12-10T12:09:30.756Z",
+				"updatedAt": "2022-12-10T12:13:22.273Z",
+				"publishedAt": "2022-12-10T12:09:32.904Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"Name": "Enano",
+				"Skill": "Artesanía enana - Todos los enanos saben reparar y mejorar armas y armaduras. Pueden reciclar materiales del entorno",
+				"createdAt": "2022-12-10T12:12:15.044Z",
+				"updatedAt": "2022-12-10T12:19:22.913Z",
+				"publishedAt": "2022-12-10T12:19:22.907Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"Name": "Hombre Lagarto",
+				"Skill": "Aliento de dragón - Los lizardman pueden escupir fuego, hielo o veneno dependiendo del color que sean, rojo, azul o verde.",
+				"createdAt": "2022-12-10T12:14:13.571Z",
+				"updatedAt": "2022-12-10T12:19:27.362Z",
+				"publishedAt": "2022-12-10T12:19:27.355Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}

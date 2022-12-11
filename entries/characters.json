@@ -35,58 +35,7 @@
 				"updatedBy": null
 			}
 		},
-		"api::job.job": {
-			"1": {
-				"id": 1,
-				"Name": "Guerrero",
-				"Skill": "Puede mover o romper obstáculos.",
-				"createdAt": "2022-12-10T12:00:01.839Z",
-				"updatedAt": "2022-12-10T12:00:14.142Z",
-				"publishedAt": "2022-12-10T12:00:14.130Z",
-				"createdBy": null,
-				"updatedBy": null
-			},
-			"2": {
-				"id": 2,
-				"Name": "Mago",
-				"Skill": "Usa hechizos de magía elemental, defensivos, ofensivos y de invocación.",
-				"createdAt": "2022-12-10T12:01:35.833Z",
-				"updatedAt": "2022-12-10T12:03:47.585Z",
-				"publishedAt": "2022-12-10T12:01:37.479Z",
-				"createdBy": null,
-				"updatedBy": null
-			},
-			"3": {
-				"id": 3,
-				"Name": "Pícaro",
-				"Skill": "Puede pasar desapercibido, puede escalar y puede abrir cerraduras.",
-				"createdAt": "2022-12-10T12:02:21.234Z",
-				"updatedAt": "2022-12-10T12:02:22.940Z",
-				"publishedAt": "2022-12-10T12:02:22.926Z",
-				"createdBy": null,
-				"updatedBy": null
-			},
-			"4": {
-				"id": 4,
-				"Name": "Clérigo",
-				"Skill": "Usa hechizos de curación, potenciadores, defensivos y ofensivos.",
-				"createdAt": "2022-12-10T12:02:56.962Z",
-				"updatedAt": "2022-12-10T12:02:58.392Z",
-				"publishedAt": "2022-12-10T12:02:58.379Z",
-				"createdBy": null,
-				"updatedBy": null
-			},
-			"5": {
-				"id": 5,
-				"Name": "Druida",
-				"Skill": "Se pueden transformar en su espíritu animal. Pueden hablar con animales.",
-				"createdAt": "2022-12-10T12:04:26.456Z",
-				"updatedAt": "2022-12-10T12:04:27.711Z",
-				"publishedAt": "2022-12-10T12:04:27.700Z",
-				"createdBy": null,
-				"updatedBy": null
-			}
-		},
+		"api::job.job": {},
 		"api::race.race": {
 			"1": {
 				"id": 1,
@@ -221,7 +170,7 @@
 				"level": 1,
 				"slug": "charmandor",
 				"race": 4,
-				"job": 3,
+				"job": null,
 				"inventory": [],
 				"equipment": [
 					1,
@@ -249,7 +198,7 @@
 				"level": 1,
 				"slug": "galerion",
 				"race": 1,
-				"job": 2,
+				"job": null,
 				"inventory": [],
 				"equipment": [
 					1
@@ -276,7 +225,7 @@
 				"level": 1,
 				"slug": "lord-donger",
 				"race": 3,
-				"job": 5,
+				"job": null,
 				"inventory": [],
 				"equipment": [
 					2
@@ -303,7 +252,7 @@
 				"level": 1,
 				"slug": "robbin",
 				"race": 2,
-				"job": 4,
+				"job": null,
 				"inventory": [],
 				"equipment": [],
 				"image": 4,
@@ -328,7 +277,7 @@
 				"level": 2,
 				"slug": "xammael",
 				"race": 2,
-				"job": 1,
+				"job": null,
 				"inventory": [],
 				"equipment": [
 					1
