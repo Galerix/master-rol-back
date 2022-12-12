@@ -20,22 +20,23 @@
     "Type": {
       "type": "enumeration",
       "enum": [
-        "Sword",
-        "Shield",
-        "Bow",
-        "Arrow",
-        "Crossbow",
-        "Staff",
-        "Tunic",
-        "Light Armor",
-        "Heavy Armor",
-        "Ring",
-        "Pendant",
-        "Cloak",
-        "Dagger",
-        "Mace",
-        "Spear",
-        "Miscellaneous"
+        "Espada",
+        "Escudo",
+        "Arco",
+        "Flecha",
+        "Ballesta",
+        "Bastón",
+        "Tunica",
+        "Armadura Ligera",
+        "Armadura Pesada",
+        "Anillo",
+        "Colgante",
+        "Manto",
+        "Daga",
+        "Maza",
+        "Hacha",
+        "Lanza",
+        "Misceláneo"
       ],
       "required": true
     },
@@ -43,10 +44,10 @@
       "type": "enumeration",
       "enum": [
         "Normal",
-        "Rare",
-        "Extraordinary",
-        "Unique",
-        "Legendary"
+        "Raro",
+        "Extraordinario",
+        "Único",
+        "Legendario"
       ],
       "required": true
     },

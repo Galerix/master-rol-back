@@ -1,6 +1,6 @@
 # ⚔️ Backend de Master Rol App
 
-Este proyecto esta creado con Strapi, un CMS creado en NodeJS, te permite crear tipos de contenido de manera visual y te genera una API de JSON automáticamente, entre otras cosas.
+Este proyecto esta creado con Strapi, un CMS headless de código abierto basado en Node.js para gestionar contenidos y ponerlos a disposición a través de una API totalmente personalizable. Está diseñado para construir APIs Node.js prácticas y listas para producción en horas en lugar de semanas.
 
 El primer paso para ejecutar el proyecto en instalar las dependencias.
 
