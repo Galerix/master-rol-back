@@ -62,8 +62,8 @@ module.exports = createCoreController(
       const characters = [];
 
       for (const character of data) {
-        let characterRace = character.attributes.race.data.attributes;
-        let characerJob = character.attributes.job.data.attributes;
+        let characterRace = character.attributes.race.data ? character.attributes.race.data.attributes: {};
+        let characerJob = character.attributes.job.data ? character.attributes.job.data.attributes : {};
         let characterInventory = character.attributes.inventory.data;
 
         let customEquipment = [];
