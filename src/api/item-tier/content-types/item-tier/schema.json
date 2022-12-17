@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "item_tiers",
+  "info": {
+    "singularName": "item-tier",
+    "pluralName": "item-tiers",
+    "displayName": "ItemTier"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    }
+  }
+}

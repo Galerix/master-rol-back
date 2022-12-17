@@ -4,20 +4,69 @@
   "info": {
     "singularName": "race",
     "pluralName": "races",
-    "displayName": "Race"
+    "displayName": "Race",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Skill": {
+    "skill": {
       "type": "text",
+      "required": true
+    },
+    "strengthBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "perceptionBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "enduranceBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "charismaBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "intelligenceBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "agilityBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "luckBase": {
+      "type": "integer",
+      "min": 1,
+      "required": true,
+      "default": 1
+    },
+    "ratioHPE": {
+      "type": "integer",
+      "min": 1,
+      "default": 1,
       "required": true
     }
   }

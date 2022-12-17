@@ -12,71 +12,64 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Type": {
-      "type": "enumeration",
-      "enum": [
-        "Espada",
-        "Escudo",
-        "Arco",
-        "Flecha",
-        "Ballesta",
-        "Bastón",
-        "Tunica",
-        "Armadura Ligera",
-        "Armadura Pesada",
-        "Anillo",
-        "Colgante",
-        "Manto",
-        "Daga",
-        "Maza",
-        "Hacha",
-        "Lanza",
-        "Misceláneo"
-      ],
-      "required": true
-    },
-    "Range": {
-      "type": "enumeration",
-      "enum": [
-        "Normal",
-        "Raro",
-        "Extraordinario",
-        "Único",
-        "Legendario"
-      ],
-      "required": true
-    },
-    "Skill1": {
+    "skill1": {
       "type": "text",
       "required": false
     },
-    "Skill2": {
+    "skill2": {
       "type": "text"
     },
-    "Skill3": {
+    "skill3": {
       "type": "text"
     },
     "bonus": {
       "type": "integer",
-      "required": true,
+      "required": false,
       "default": 0,
       "min": 0
     },
     "bonusType": {
       "type": "enumeration",
       "enum": [
-        "Strength",
-        "Perception",
-        "Endurance",
-        "Charisma",
-        "Intelligence",
-        "Agility",
-        "Luck"
+        "strength",
+        "perception",
+        "endurance",
+        "charisma",
+        "intelligence",
+        "agility",
+        "luck"
+      ]
+    },
+    "tier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::item-tier.item-tier"
+    },
+    "type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::item-type.item-type"
+    },
+    "penalty": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "penaltyType": {
+      "type": "enumeration",
+      "enum": [
+        "strength",
+        "perception",
+        "endurance",
+        "charisma",
+        "intelligence",
+        "agility",
+        "luck"
       ]
     }
   }

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "item_types",
+  "info": {
+    "singularName": "item-type",
+    "pluralName": "item-types",
+    "displayName": "ItemType",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "scope": {
+      "type": "enumeration",
+      "enum": [
+        "melee",
+        "remote"
+      ]
+    },
+    "statScale": {
+      "type": "enumeration",
+      "enum": [
+        "strength",
+        "intelligence",
+        "agility"
+      ]
+    }
+  }
+}

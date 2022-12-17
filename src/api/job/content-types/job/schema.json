@@ -4,21 +4,40 @@
   "info": {
     "singularName": "job",
     "pluralName": "jobs",
-    "displayName": "Job"
+    "displayName": "Job",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Name": {
+    "name": {
       "type": "string",
       "unique": true,
       "required": true
     },
-    "Skill": {
+    "skill": {
       "type": "text",
       "required": true
+    },
+    "bonusStat": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 1
+    },
+    "bonusType": {
+      "type": "enumeration",
+      "enum": [
+        "strength",
+        "perception",
+        "endurance",
+        "charisma",
+        "intelligence",
+        "agility",
+        "luck"
+      ]
     }
   }
 }
