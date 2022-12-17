@@ -1,0 +1,61 @@
+{
+	"version": 2,
+	"data": {
+		"api::item-tier.item-tier": {
+			"1": {
+				"id": 1,
+				"name": "Normal",
+				"createdAt": "2022-12-16T11:32:03.953Z",
+				"updatedAt": "2022-12-16T11:32:06.750Z",
+				"publishedAt": "2022-12-16T11:32:06.748Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"name": "Raro",
+				"createdAt": "2022-12-16T11:33:02.412Z",
+				"updatedAt": "2022-12-16T11:33:07.839Z",
+				"publishedAt": "2022-12-16T11:33:07.837Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"name": "Extraordinario",
+				"createdAt": "2022-12-16T11:33:23.152Z",
+				"updatedAt": "2022-12-16T11:33:26.361Z",
+				"publishedAt": "2022-12-16T11:33:26.359Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"name": "Único",
+				"createdAt": "2022-12-16T11:33:38.323Z",
+				"updatedAt": "2022-12-16T11:33:39.329Z",
+				"publishedAt": "2022-12-16T11:33:39.328Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"name": "Legendario",
+				"createdAt": "2022-12-16T11:33:46.660Z",
+				"updatedAt": "2022-12-16T11:33:48.282Z",
+				"publishedAt": "2022-12-16T11:33:48.279Z",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"name": "Maldito",
+				"createdAt": "2022-12-16T11:33:54.379Z",
+				"updatedAt": "2022-12-16T11:33:55.575Z",
+				"publishedAt": "2022-12-16T11:33:55.573Z",
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}

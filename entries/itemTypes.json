@@ -1,0 +1,139 @@
+{
+	"version": 2,
+	"data": {
+		"api::item-type.item-type": {
+			"1": {
+				"id": 1,
+				"name": "Espada",
+				"createdAt": "2022-12-16T11:45:47.633Z",
+				"updatedAt": "2022-12-16T11:45:53.590Z",
+				"publishedAt": "2022-12-16T11:45:53.587Z",
+				"scope": "melee",
+				"statScale": "strength",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"2": {
+				"id": 2,
+				"name": "Escudo",
+				"createdAt": "2022-12-16T11:46:12.155Z",
+				"updatedAt": "2022-12-16T11:46:15.836Z",
+				"publishedAt": "2022-12-16T11:46:15.834Z",
+				"scope": null,
+				"statScale": null,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"3": {
+				"id": 3,
+				"name": "Armadura Ligera",
+				"createdAt": "2022-12-16T11:46:23.381Z",
+				"updatedAt": "2022-12-16T11:46:24.000Z",
+				"publishedAt": "2022-12-16T11:46:23.998Z",
+				"scope": null,
+				"statScale": null,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"4": {
+				"id": 4,
+				"name": "Armadura Pesada",
+				"createdAt": "2022-12-16T11:46:32.337Z",
+				"updatedAt": "2022-12-16T11:46:33.677Z",
+				"publishedAt": "2022-12-16T11:46:33.675Z",
+				"scope": null,
+				"statScale": null,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"5": {
+				"id": 5,
+				"name": "Mandoble",
+				"createdAt": "2022-12-16T11:46:45.377Z",
+				"updatedAt": "2022-12-16T11:46:46.610Z",
+				"publishedAt": "2022-12-16T11:46:46.607Z",
+				"scope": "melee",
+				"statScale": "strength",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"6": {
+				"id": 6,
+				"name": "Hacha",
+				"createdAt": "2022-12-16T11:46:57.838Z",
+				"updatedAt": "2022-12-16T11:46:58.521Z",
+				"publishedAt": "2022-12-16T11:46:58.519Z",
+				"scope": "melee",
+				"statScale": "strength",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"7": {
+				"id": 7,
+				"name": "Daga",
+				"createdAt": "2022-12-16T11:47:10.229Z",
+				"updatedAt": "2022-12-16T11:47:12.776Z",
+				"publishedAt": "2022-12-16T11:47:12.774Z",
+				"scope": "melee",
+				"statScale": "agility",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"8": {
+				"id": 8,
+				"name": "Túnica",
+				"createdAt": "2022-12-16T11:47:30.180Z",
+				"updatedAt": "2022-12-16T11:47:30.788Z",
+				"publishedAt": "2022-12-16T11:47:30.786Z",
+				"scope": null,
+				"statScale": null,
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"9": {
+				"id": 9,
+				"name": "Bastón",
+				"createdAt": "2022-12-16T11:47:47.013Z",
+				"updatedAt": "2022-12-16T11:47:48.525Z",
+				"publishedAt": "2022-12-16T11:47:48.523Z",
+				"scope": "remote",
+				"statScale": "intelligence",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"10": {
+				"id": 10,
+				"name": "Arco",
+				"createdAt": "2022-12-16T11:49:25.095Z",
+				"updatedAt": "2022-12-16T11:49:28.106Z",
+				"publishedAt": "2022-12-16T11:49:28.103Z",
+				"scope": "remote",
+				"statScale": "agility",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"11": {
+				"id": 11,
+				"name": "Ballesta",
+				"createdAt": "2022-12-16T11:49:36.903Z",
+				"updatedAt": "2022-12-16T11:49:37.877Z",
+				"publishedAt": "2022-12-16T11:49:37.876Z",
+				"scope": "remote",
+				"statScale": "agility",
+				"createdBy": null,
+				"updatedBy": null
+			},
+			"12": {
+				"id": 12,
+				"name": "Colgante",
+				"createdAt": "2022-12-16T14:06:26.327Z",
+				"updatedAt": "2022-12-16T14:06:29.127Z",
+				"publishedAt": "2022-12-16T14:06:29.124Z",
+				"scope": null,
+				"statScale": null,
+				"createdBy": null,
+				"updatedBy": null
+			}
+		}
+	}
+}
