@@ -1,5 +1,7 @@
 "use strict";
 
+const { getCustomItem } = require("../../../utils/item");
+
 /**
  * character controller
  */
@@ -15,39 +17,17 @@ function calculateStat(statName, characterStat, raceStat, characerJob, items) {
   var finalStat = initialStat;
 
   items.map((item) => {
-    if (item.bonus && item.bonusType == statName) {
-      finalStat += item.bonus;
-    }
-    if (item.penalty && item.penaltyType == statName) {
-      finalStat -= item.penalty;
+    if (item) {
+      if (item.bonus && item.bonusType == statName) {
+        finalStat += item.bonus;
+      }
+      if (item.penalty && item.penaltyType == statName) {
+        finalStat -= item.penalty;
+      }
     }
   });
 
   return { initial: initialStat, final: finalStat > 0 ? finalStat : 1 };
-}
-
-async function findItem(itemId) {
-  if (!itemId) {
-    return {};
-  }
-
-  return await strapi.service("api::item.item").findOne(itemId, {
-    fields: [
-      "id",
-      "name",
-      "skill1",
-      "skill2",
-      "skill3",
-      "bonus",
-      "bonusType",
-      "penalty",
-      "penaltyType",
-    ],
-    populate: {
-      tier: { fields: ["id", "name"] },
-      type: { fields: ["id", "name", "scope", "statScale"] },
-    },
-  });
 }
 
 module.exports = createCoreController(
@@ -55,146 +35,214 @@ module.exports = createCoreController(
   ({ strapi }) => ({
     // api/characters
     async find(ctx) {
-      ctx.query = { ...ctx.query, populate: "*" };
+      const itemFields = [
+        "id",
+        "name",
+        "skill1",
+        "skill2",
+        "skill3",
+        "bonus",
+        "bonusType",
+        "penalty",
+        "penaltyType",
+      ];
 
-      const { data, meta } = await super.find(ctx);
+      const tierFields = ["id", "name"];
+
+      const typeFields = ["id", "name", "scope", "statScale"];
+
+      ctx.query = {
+        ...ctx.query,
+        populate: {
+          race: {
+            fields: [
+              "id",
+              "name",
+              "skill",
+              "strengthBase",
+              "perceptionBase",
+              "enduranceBase",
+              "charismaBase",
+              "intelligenceBase",
+              "agilityBase",
+              "luckBase",
+              "ratioHPE",
+            ],
+          },
+          job: {
+            fields: ["id", "name", "skill", "bonusStat", "bonusType"],
+          },
+          inventory: {
+            fields: itemFields,
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          leftHand: {
+            fields: itemFields,
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          rightHand: {
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          armor: {
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          accessory1: {
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          accessory2: {
+            populate: {
+              tier: { fields: tierFields },
+              type: { fields: typeFields },
+            },
+          },
+          image: {
+            fields: ["*"],
+          },
+        },
+      };
+
+      const { data } = await super.find(ctx);
 
       const characters = [];
 
+<<<<<<< HEAD
       for (const character of data) {
         let characterRace = character.attributes.race.data ? character.attributes.race.data.attributes: {};
         let characerJob = character.attributes.job.data ? character.attributes.job.data.attributes : {};
         let characterInventory = character.attributes.inventory.data;
+=======
+      for (let character of data) {
+        character = { id: character.id, ...character.attributes };
 
-        let customEquipment = [];
-        let customInventory = [];
+        const race = {
+          id: character.race.data.id,
+          ...character.race.data.attributes,
+        };
 
-        let characterLeftHand = character.attributes.leftHand.data
-          ? await findItem(character.attributes.leftHand.data.id)
-          : {};
+        character.race = race;
+>>>>>>> 1e734cd (Actualizaciones)
 
-        let characterRightHand = character.attributes.rightHand.data
-          ? await findItem(character.attributes.rightHand.data.id)
-          : {};
+        const job = {
+          id: character.job.data.id,
+          ...character.job.data.attributes,
+        };
 
-        let characterArmor = character.attributes.armor.data
-          ? await findItem(character.attributes.armor.data.id)
-          : {};
+        character.job = job;
 
-        let characterAccessory1 = character.attributes.accessory1.data
-          ? await findItem(character.attributes.accessory1.data.id)
-          : {};
+        const leftHand = getCustomItem({ ...character.leftHand.data });
+        const rightHand = getCustomItem({ ...character.rightHand.data });
+        const armor = getCustomItem({ ...character.armor.data });
+        const accessory1 = getCustomItem({ ...character.accessory1.data });
+        const accessory2 = getCustomItem({ ...character.accessory2.data });
 
-        let characterAccessory2 = character.attributes.accessory2.data
-          ? await findItem(character.attributes.accessory2.data.id)
-          : {};
+        const equipment = {
+          leftHand,
+          rightHand,
+          armor,
+          accessory1,
+          accessory2,
+        };
 
-        customEquipment.push(
-          characterLeftHand,
-          characterRightHand,
-          characterArmor,
-          characterAccessory1,
-          characterAccessory2
-        );
+        character.equipment = equipment;
 
-        for (const item of characterInventory) {
-          const customItem = await findItem(item.id);
-          customInventory.push(customItem);
+        delete character.leftHand;
+        delete character.rightHand;
+        delete character.armor;
+        delete character.accessory1;
+        delete character.accessory2;
+
+        const inventory = character.inventory.data;
+
+        for (let i = 0; i < inventory.length; i++) {
+          inventory[i] = getCustomItem(inventory[i]);
         }
 
-        let ratioHPE = characterRace.ratioHPE;
+        character.inventory = inventory;
 
-        let characterStats = {
-          strength: calculateStat(
-            "strength",
-            character.attributes.strength,
-            characterRace.strengthBase,
-            characerJob,
-            customEquipment
-          ),
-          perception: calculateStat(
-            "perception",
-            character.attributes.perception,
-            characterRace.perceptionBase,
-            characerJob,
-            customEquipment
-          ),
-          endurance: calculateStat(
-            "endurance",
-            character.attributes.endurance,
-            characterRace.enduranceBase,
-            characerJob,
-            customEquipment
-          ),
-          charisma: calculateStat(
-            "charisma",
-            character.attributes.charisma,
-            characterRace.charismaBase,
-            characerJob,
-            customEquipment
-          ),
-          intelligence: calculateStat(
-            "intelligence",
-            character.attributes.intelligence,
-            characterRace.intelligenceBase,
-            characerJob,
-            customEquipment
-          ),
-          agility: calculateStat(
-            "agility",
-            character.attributes.agility,
-            characterRace.agilityBase,
-            characerJob,
-            customEquipment
-          ),
-          luck: calculateStat(
-            "luck",
-            character.attributes.luck,
-            characterRace.luckBase,
-            characerJob,
-            customEquipment
-          ),
-        };
+        character.strength = calculateStat(
+          "strength",
+          character.strength,
+          race.strengthBase,
+          job,
+          Object.values(equipment)
+        );
+        character.perception = calculateStat(
+          "perception",
+          character.perception,
+          race.perceptionBase,
+          job,
+          Object.values(equipment)
+        );
+        character.endurance = calculateStat(
+          "endurance",
+          character.endurance,
+          race.enduranceBase,
+          job,
+          Object.values(equipment)
+        );
+        character.charisma = calculateStat(
+          "charisma",
+          character.charisma,
+          race.charismaBase,
+          job,
+          Object.values(equipment)
+        );
+        character.intelligence = calculateStat(
+          "intelligence",
+          character.intelligence,
+          race.intelligenceBase,
+          job,
+          Object.values(equipment)
+        );
+        character.agility = calculateStat(
+          "agility",
+          character.agility,
+          race.agilityBase,
+          job,
+          Object.values(equipment)
+        );
+        character.luck = calculateStat(
+          "luck",
+          character.luck,
+          race.luckBase,
+          job,
+          Object.values(equipment)
+        );
 
-        let customCharacter = {
-          id: character.id,
-          slug: character.attributes.slug,
-          name: character.attributes.name,
-          strength: characterStats.strength,
-          perception: characterStats.perception,
-          endurance: characterStats.endurance,
-          charisma: characterStats.charisma,
-          intelligence: characterStats.intelligence,
-          agility: characterStats.agility,
-          luck: characterStats.luck,
-          maxHealth: ratioHPE * characterStats.endurance.initial,
-          health: character.attributes.health,
-          maxExperience: character.attributes.level * 100,
-          experience: character.attributes.experience,
-          level: character.attributes.level,
-          race: {
-            name: characterRace.name,
-            skill: characterRace.skill,
-          },
-          job: {
-            name: characerJob.name,
-            skill: characerJob.skill,
-          },
-          equipment: {
-            leftHand: characterLeftHand,
-            rightHand: characterRightHand,
-            armor: characterArmor,
-            accessory1: characterAccessory1,
-            accessory2: characterAccessory2,
-          },
-          inventory: customInventory,
-          image: character.attributes.image,
-        };
+        character.maxHealth = race.ratioHPE * character.endurance.initial;
 
-        characters.push(customCharacter);
+        character.maxExperience = character.level * 100;
+
+        delete character.race.strengthBase;
+        delete character.race.perceptionBase;
+        delete character.race.enduranceBase;
+        delete character.race.charismaBase;
+        delete character.race.intelligenceBase;
+        delete character.race.agilityBase;
+        delete character.race.luckBase;
+        delete character.race.ratioHPE;
+        delete character.job.bonusStat;
+        delete character.job.bonusType;
+
+        characters.push(character);
       }
 
-      return { characters, meta };
+      return { characters };
     },
   })
 );
