@@ -120,12 +120,6 @@ module.exports = createCoreController(
 
       const characters = [];
 
-<<<<<<< HEAD
-      for (const character of data) {
-        let characterRace = character.attributes.race.data ? character.attributes.race.data.attributes: {};
-        let characerJob = character.attributes.job.data ? character.attributes.job.data.attributes : {};
-        let characterInventory = character.attributes.inventory.data;
-=======
       for (let character of data) {
         character = { id: character.id, ...character.attributes };
 
@@ -135,7 +129,6 @@ module.exports = createCoreController(
         };
 
         character.race = race;
->>>>>>> 1e734cd (Actualizaciones)
 
         const job = {
           id: character.job.data.id,
